@@ -31,4 +31,14 @@ public abstract class FacturaDecorator implements Factura {
     public void setTotal(double total) {
         factura.setTotal(total);
     }
+
+    @Override
+    public String getId() {
+        return factura.getId();
+    }
+
+    @Override
+    public void setId(String id) {
+        factura.setId(id);
+    }
 }

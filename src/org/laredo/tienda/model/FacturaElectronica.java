@@ -31,4 +31,13 @@ public class FacturaElectronica implements Factura{
     public void setTotal(double total) {
         facturaDelegada.setTotal(total);
     }
+
+    public String getId() {
+        return facturaDelegada.getId();
+    }
+
+    @Override
+    public void setId(String id) {
+        facturaDelegada.setId(id);
+    }
 }

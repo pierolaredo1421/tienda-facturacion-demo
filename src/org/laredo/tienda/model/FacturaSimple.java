@@ -26,6 +26,11 @@ public class FacturaSimple implements Factura{
     }
 
     @Override
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    @Override
     public void generarFactura() {
         System.out.println("===FACTURA SIMPLE===");
         System.out.println("ID: " + id);

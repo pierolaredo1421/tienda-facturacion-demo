@@ -10,4 +10,6 @@ public interface Factura {
     double getTotal();
     // cambia el costo total de los productos por uno nuevo, simulando el "descuento"
     void setTotal(double total);
+    String getId();
+    void setId(String id);
 }

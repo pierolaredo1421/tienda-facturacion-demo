@@ -9,10 +9,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class InMemoryFacturaRepository implements FacturaRepository {
     // se usa LinkedHashMap para que se ordene por orden de ingreso
     private final Map<String, Factura> storage = new LinkedHashMap<>();
+    private final AtomicInteger counter = new AtomicInteger(1);
 
     @Override
     public void save(Factura factura) {
-        String id = idSecuencial(factura);
+        String id = idSecuencial();
+        factura.setId(id);
         storage.put(id, factura);
     }
 
@@ -26,9 +28,8 @@ public class InMemoryFacturaRepository implements FacturaRepository {
         return new ArrayList<>(storage.values());
     }
 
-    private String idSecuencial(Factura factura) {
-        AtomicInteger SECUENCIAL = new AtomicInteger(000001);
-        int parteSecuencial = SECUENCIAL.getAndIncrement();
-        return parteSecuencial + "";
+    private  String idSecuencial() {
+        int parteSecuencial = counter.getAndIncrement();
+        return String.format("%06d", parteSecuencial);
     }
 }
