@@ -7,7 +7,7 @@ import java.math.RoundingMode;
 
 public class FacturaConDescuento extends FacturaDecorator {
     private final double porcentaje;
-    protected FacturaConDescuento(Factura factura, double porcentaje) {
+    public FacturaConDescuento(Factura factura, double porcentaje) {
         super(factura);
         this.porcentaje = porcentaje;
     }

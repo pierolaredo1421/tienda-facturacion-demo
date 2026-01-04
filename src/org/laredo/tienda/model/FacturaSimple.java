@@ -3,21 +3,21 @@ package org.laredo.tienda.model;
 import java.util.List;
 
 public class FacturaSimple implements Factura{
-    private List<Producto> productos;
+    private List<ProductComponent> productos;
     private double total;
     private String id;
 
-    public FacturaSimple(String id, List<Producto> productos) {
+    public FacturaSimple(String id, List<ProductComponent> productos) {
         this.id = id;
         this.productos = productos;
         this.total = calcularTotal();
     }
 
     public Double calcularTotal() {
-        return productos.stream().mapToDouble(Producto::getPrecio).sum();
+        return productos.stream().mapToDouble(ProductComponent::price).sum();
     }
 
-    public List<Producto> getProductos() {
+    public List<ProductComponent> getProductos() {
         return productos;
     }
 
@@ -40,7 +40,7 @@ public class FacturaSimple implements Factura{
     }
 
     @Override
-    public List<Producto> listarProductos() {
+    public List<ProductComponent> listarProductos() {
         return productos;
     }
 

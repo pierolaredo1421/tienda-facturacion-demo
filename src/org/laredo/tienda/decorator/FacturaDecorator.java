@@ -1,7 +1,8 @@
 package org.laredo.tienda.decorator;
 
 import org.laredo.tienda.model.Factura;
-import org.laredo.tienda.model.Producto;
+import org.laredo.tienda.model.Product;
+import org.laredo.tienda.model.ProductComponent;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public abstract class FacturaDecorator implements Factura {
     }
 
     @Override
-    public List<Producto> listarProductos() {
+    public List<ProductComponent> listarProductos() {
         return factura.listarProductos();
     }
 

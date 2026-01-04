@@ -6,7 +6,7 @@ import java.util.List;
 
 public class VentaElectronicaFactory implements SistemaVentaFactory{
     @Override
-    public Factura crearFactura(String id, List<Producto> productos) {
+    public Factura crearFactura(String id, List<ProductComponent> productos) {
         return new FacturaElectronica(id, productos);
     }
 

@@ -5,7 +5,7 @@ import java.util.List;
 public class FacturaElectronica implements Factura{
     private FacturaSimple facturaDelegada;
 
-    public FacturaElectronica(String id, List<Producto> productos) {
+    public FacturaElectronica(String id, List<ProductComponent> productos) {
         this.facturaDelegada = new FacturaSimple(id, productos);
     }
 
@@ -18,7 +18,7 @@ public class FacturaElectronica implements Factura{
     }
 
     @Override
-    public List<Producto> listarProductos() {
+    public List<ProductComponent> listarProductos() {
         return facturaDelegada.listarProductos();
     }
 
